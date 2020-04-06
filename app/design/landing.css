@@ -147,7 +147,6 @@
 
   .download-buttons {
     margin: auto;
-    width: 80vw;
     text-align: left;
   }
 
@@ -167,4 +166,10 @@
       display:block;
       
     }
+
+    .hero {
+      margin: auto;
+      width: 88vw;
+    }
+
   }

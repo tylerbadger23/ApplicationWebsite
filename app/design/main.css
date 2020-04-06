@@ -51,7 +51,7 @@
 }
 
 .nav-top {
-    height: 44px;
+    height: 50px;
     width: 90vw;
     margin: auto;
     background: rgb(255, 255, 255);
@@ -62,7 +62,7 @@
     font-weight: 200;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding-top: 5px;
-    font-size: 21px;
+    font-size: 25px;
 }
 
 .grid-2-nav {
@@ -78,7 +78,7 @@ ul li {
     display: inline-block;
     list-style: none;
     color: white;
-    padding: 7px 20px;
+    padding: 9px 20px;
 }
 
 ul li a {

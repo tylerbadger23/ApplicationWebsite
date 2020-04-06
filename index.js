@@ -18,3 +18,7 @@ app.get("/", (req,res) => {
     console.log(`Rendered Index File`);
 });
 
+app.get("/download", (req,res)=> {
+    res.sendFile(__dirname + "/pages/download.html");
+})
+

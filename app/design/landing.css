@@ -14,7 +14,7 @@
   }
 
   .buttons button {
-    margin: 12px 15px 40px 15px;
+    margin: 12px 15px 60px 15px;
   }
 
   .buttons {
@@ -31,7 +31,7 @@
     font-size: 38px;
     font-weight: 200;
     text-align: center;
-    margin: 60px 0px 30px 0px;
+    margin: 90px 0px 20px 0px;
   }
 
   .hero-text {
@@ -40,7 +40,7 @@
     font-weight: 400;
     text-align: center;
     padding-bottom: 30px;
-    width: 65vw;
+    width: 55vw;
     margin: auto;
     color: rgb(85, 85, 85) ;
   }
@@ -59,7 +59,7 @@
 
   img {
       margin-top: 45px;
-      max-height: 300px;
+      max-width: 23vw;
       display: block;
       margin: auto;
       
@@ -80,7 +80,28 @@
   }
 
 
+  #dark-btn {
+    border-radius: 8px;
+    background-color:#3F3D56;
+    transition: background-color .5s;
+    color: white;
+  }
+
+  #learn-btn:hover {
+    background-color: rgb(255, 255, 255) ;
+    color: #3F3D56;
+    border: 2px solid #3F3D56;
+  }
+
+
   #download-btn {
+    border-radius: 8px;
+    background-color:#F50057;
+    transition: background-color .5s;
+    color: white;
+  }
+
+  #w64-btn {
     border-radius: 8px;
     background-color:#F50057;
     transition: background-color .5s;
@@ -91,4 +112,59 @@
     color: white;
     transition: background-color .5s;
     background-color: #3F3D56;
+  }
+
+
+  /* download page */
+
+  #download-header {
+    color: #3F3D56;
+    font-size: 38px;
+    font-weight: 200;
+    text-align: left;
+    margin: 90px 0px 20px 0px;
+  }
+
+  #features-dw-header {
+    color: #3F3D56;
+    font-size: 33px;
+    font-weight: 200;
+    text-align: left;
+    margin: 90px 0px 15px 0px;
+  }
+
+  .download-desc {
+    max-width: 650px;
+    text-align: left;
+    font-size: 18px;
+    line-height: 1.7;;
+
+  }
+
+  .download-buttons a {
+    margin: 15px 15px 30px 0px;
+  }
+
+  .download-buttons {
+    margin: auto;
+    width: 80vw;
+    text-align: left;
+  }
+
+  .download-sec {
+    margin: auto;
+    width: 85vw;
+    display: grid;
+    grid-template-columns: 58% 42%;
+  }
+
+
+
+  @media only screen and (max-width: 1315px) {
+    .download-sec {
+      margin: auto;
+      width: 90vw;
+      display:block;
+      
+    }
   }

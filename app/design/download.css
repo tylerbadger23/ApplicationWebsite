@@ -1,0 +1,18 @@
+#download-header {
+    color: #3F3D56;
+    font-size: 38px;
+    font-weight: 200;
+    text-align: left;
+    margin: 90px 0px 20px 0px;
+  }
+
+  .hero-text {
+    font-size: 18px;
+    line-height: 1.5;
+    font-weight: 400;
+    text-align: center;
+    padding-bottom: 30px;
+    width: 55vw;
+    margin: auto;
+    color: rgb(85, 85, 85) ;
+  }

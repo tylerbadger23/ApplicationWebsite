@@ -1,4 +1,4 @@
-const express = require("express");
+    const express = require("express");
 let __port = 8888;
 const app = express();
 
@@ -22,3 +22,10 @@ app.get("/download", (req,res)=> {
     res.sendFile(__dirname + "/pages/download.html");
 })
 
+app.get("/about", (req,res)=> {
+    res.sendFile(__dirname + "/pages/about.html");
+});
+
+app.get("/features", (req,res) =>{
+    res.sendFile(__dirname + "/pages/features.html");
+});

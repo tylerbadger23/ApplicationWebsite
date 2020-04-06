@@ -29,11 +29,7 @@
 
 .highlighted {
     color: #F50057;
-}
-
-
-.highlighted-t { /* highlighted text for title and no hover effect */
-    color: #F50057;
+    text-decoration: none;
 }
 
 
@@ -67,13 +63,20 @@
     font-size: 25px;
 }
 
-.highlighted-t { /* highlighted text for title and no hover effect */
-    color: #F50057;
-}
-
 .nav-text:hover {
     text-decoration: none;
     cursor: pointer;
+    color: #3f3f3f;
+}
+
+.highlighted-t { /* highlighted text for title and no hover effect */
+    color: #F50057;
+    text-decoration: none;
+}
+
+.highlighted-t:hover {
+    color: #F50057;
+    text-decoration: none;
 }
 
 .grid-2-nav {

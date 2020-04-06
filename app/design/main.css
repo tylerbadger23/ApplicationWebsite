@@ -59,10 +59,21 @@
 }
 
 .nav-text {
+    text-decoration: none;
+    color: #3F3D56;
     font-weight: 200;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding-top: 5px;
     font-size: 25px;
+}
+
+.highlighted-t { /* highlighted text for title and no hover effect */
+    color: #F50057;
+}
+
+.nav-text:hover {
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .grid-2-nav {

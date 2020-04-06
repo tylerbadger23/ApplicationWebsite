@@ -1,0 +1,39 @@
+
+
+.center-about {
+    padding-top: 50px;
+    margin: auto;
+    width: 70vw;
+}
+
+#about-p {
+    color: rgb(32, 32, 32);
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 100;
+    padding-top: 10px;
+    text-align: left;
+}
+
+.link-text {
+    color: #F50057;
+    transition: color .5s;
+    text-decoration: none;
+}
+
+.link-text:hover {
+    cursor: pointer;
+    color: #F50057;
+}
+
+#learn-more-btn {
+    transition: color .5s, background .4s;
+    margin-top: 20px;
+    background-color: #3F3D56;
+    color: rgb(255, 255, 255);
+}
+
+#learn-more-btn:hover {
+    background-color: #F50057;
+    color: rgb(255, 255, 255);
+}

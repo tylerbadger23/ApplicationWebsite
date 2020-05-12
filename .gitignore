@@ -5,3 +5,4 @@ app/downloads/builds/.DS_Store
 app/downloads/builds/darwin-osx/x64/.DS_Store
 *.zip
 *.exe
+*.db

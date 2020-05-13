@@ -5,7 +5,9 @@ let bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: false }))
 let __port = process.env.PORT || 80;
 var Datastore = require('nedb')
-  , Users = new Datastore({ filename: __dirname + '/dbs/Users.db', autoload: true });
+  , Users = new Datastore({ filename: __dirname + '/dbs/Users.db', autoload: true })
+  , Products = new Datastore({filename: __dirname + "/dbs/Products.db", autoload: true})
+
 
 
 app.use('/app', express.static('app'));
@@ -36,4 +38,4 @@ app.get("/features", (req,res) =>{
     res.sendFile(__dirname + "/pages/features.html");
 });
 
-const api = require( __dirname + "/routes/api")(app, Users, bodyParser);
+const api = require( __dirname + "/routes/api")(app, Users, Products, bodyParser);

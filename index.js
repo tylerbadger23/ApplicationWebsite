@@ -38,4 +38,15 @@ app.get("/features", (req,res) =>{
     res.sendFile(__dirname + "/pages/features.html");
 });
 
-const api = require( __dirname + "/routes/api")(app, Users, Products, bodyParser);
+app.get("/support", (req,res) =>{
+    res.sendFile(__dirname + "/pages/about.html");
+});
+
+const api = require( __dirname + "/routes/newUser")(app, Users, Products, bodyParser);
+const updateProducts = require(__dirname + "/routes/updateProducts")(app, Users, Products);
+
+
+
+
+
+//

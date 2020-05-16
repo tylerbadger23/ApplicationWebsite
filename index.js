@@ -11,7 +11,7 @@ var Datastore = require('nedb')
 
 
 app.use('/app', express.static('app'));
-app.listen(__port, (err)=> {
+app.listen(__port, (err) => {
     if(err) {
         console.log(`Server had error : ${err}`);
     } else {

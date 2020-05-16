@@ -1,4 +1,27 @@
 module.exports = function (app, Users, Products, bodyParser) {
+
+  // login route
+    app.post('/api/login', (req,res) => {
+      let email = req.body.email;
+      let password = req.body.password;
+      let staysLoggedIn = req.body.staysLoggedIn;
+
+      filterDataForCheck(staysLoggedIn, email, password)
+        .then((usr) => {
+          checkValidUser(usr.staysLoggedIn, usr.email, usr.password, Users)
+            .then((response) => {
+              res.json(response);
+              console.log(response);
+          }).catch((errResponse) => {
+            res.json(errResponse);
+            console.log(errResponse);
+          })
+      }).catch((errMsg)=> {
+        res.json({err:true, errMsg: errMsg, loggedIn: false, incorrectDataResponse: true});
+      })
+
+    });
+
     app.post("/api/register", (req, res) => {
         let username = req.body.username;
         let password1 = req.body.password1;
@@ -106,6 +129,8 @@ async function registerUsers(Users, username, email, password1) {
     });
 }
 
+
+
 //ADD Product FROM API
 async function addNewProduct(Products, Product) {
 
@@ -120,10 +145,44 @@ async function addNewProduct(Products, Product) {
             }
        });
     });
-
-
-
-
-
-    // end
+// end
 }
+
+async function filterDataForCheck(staysLoggedIn, email, password) {
+  return new Promise((resolve, reject) => {
+    if(email.length > 5 && password.length > 4) {
+      resolve({email: email, password: password, staysLoggedIn: staysLoggedIn});
+    } else {
+      reject('data is incorrect');
+    }
+
+  });
+}
+
+
+async function checkValidUser(staysLoggedIn ,email, password, Users) {
+  return new Promise((resolve, reject) => {
+    Users.find({email: email}, (err, data) => {
+      if(!err) {
+        if(data.length == 1) { //email is correct
+          if(data[0].password == password) { // basic password check
+            resolve({err: false, isLoggedIn: true, serverKey: data[0]._id, email: email, username: data[0].username, staysLoggedIn: staysLoggedIn});
+          } else {
+            reject({err: true, reason: "password was incorrect.", isLoggedIn: false});
+          }
+        } else { // email does not match user in db
+          let errResponse = {err: true, reason: "user does not exists in database with that email", isLoggedIn: false};
+          reject(errResponse);
+        }
+      } else {
+        console.log(err);
+        reject(err);
+      }
+    })
+
+  });
+}
+
+
+
+//// end of file

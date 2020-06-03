@@ -1,8 +1,6 @@
 let cheerio = require('cheerio');
-
 let fs = require("fs");
 const got = require('got');
-
 
 let productionUpdateInterval = 600000; // 10 minutes
 let developmentUpdateInterval = 25000; // 25 seconds

@@ -2,13 +2,15 @@
 const express = require("express");
 const app = express();
 let bodyParser = require("body-parser");
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({ extended: false }));
 let __port = process.env.PORT || 80;
 var Datastore = require('nedb')
   , Users = new Datastore({ filename: __dirname + '/dbs/Users.db', autoload: true })
   , Products = new Datastore({filename: __dirname + "/dbs/Products.db", autoload: true})
+  , Notifications = new Datastore({filename: __dirname + "/dbs/Notifications.db", autoload: true})
 
 
+  // CLASSES & SERVICES
 
 app.use('/app', express.static('app'));
 app.listen(__port, (err) => {
@@ -43,9 +45,8 @@ app.get("/support", (req,res) =>{
 });
 
 const api = require( __dirname + "/routes/newUser")(app, Users, Products, bodyParser);
-const updateProducts = require(__dirname + "/routes/updateProducts")(app, Users, Products);
-
-
+const UpdateHandler = require(__dirname + "/services/Updatehandler")(Users, Products);
+const NotificationHandler = require(__dirname + "/services/NotificationHandler")(Users, Notifications);
 
 
 
